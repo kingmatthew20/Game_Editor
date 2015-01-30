@@ -1,0 +1,13 @@
+U:\2nd Year\MIG\ICA\Game Editor\Game Editor\bin\Release\Game Editor.exe.config
+U:\2nd Year\MIG\ICA\Game Editor\Game Editor\bin\Release\Game Editor.exe
+U:\2nd Year\MIG\ICA\Game Editor\Game Editor\bin\Release\Game Editor.pdb
+U:\2nd Year\MIG\ICA\Game Editor\Game Editor\obj\Release\MainWindow.baml
+U:\2nd Year\MIG\ICA\Game Editor\Game Editor\obj\Release\MainWindow.g.cs
+U:\2nd Year\MIG\ICA\Game Editor\Game Editor\obj\Release\App.g.cs
+U:\2nd Year\MIG\ICA\Game Editor\Game Editor\obj\Release\Game Editor_Content.g.cs
+U:\2nd Year\MIG\ICA\Game Editor\Game Editor\obj\Release\Game Editor_MarkupCompile.cache
+U:\2nd Year\MIG\ICA\Game Editor\Game Editor\obj\Release\Game Editor.g.resources
+U:\2nd Year\MIG\ICA\Game Editor\Game Editor\obj\Release\Game_Editor.Properties.Resources.resources
+U:\2nd Year\MIG\ICA\Game Editor\Game Editor\obj\Release\Game Editor.csproj.GenerateResource.Cache
+U:\2nd Year\MIG\ICA\Game Editor\Game Editor\obj\Release\Game Editor.exe
+U:\2nd Year\MIG\ICA\Game Editor\Game Editor\obj\Release\Game Editor.pdb

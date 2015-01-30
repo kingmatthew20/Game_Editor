@@ -1,0 +1,15 @@
+U:\2nd Year\MIG\ICA\Game Editor\Game Editor\bin\Debug\Game Editor.exe.config
+U:\2nd Year\MIG\ICA\Game Editor\Game Editor\bin\Debug\Game Editor.exe
+U:\2nd Year\MIG\ICA\Game Editor\Game Editor\bin\Debug\Game Editor.pdb
+U:\2nd Year\MIG\ICA\Game Editor\Game Editor\obj\Debug\Game Editor.csprojResolveAssemblyReference.cache
+U:\2nd Year\MIG\ICA\Game Editor\Game Editor\obj\Debug\MainWindow.baml
+U:\2nd Year\MIG\ICA\Game Editor\Game Editor\obj\Debug\MainWindow.g.cs
+U:\2nd Year\MIG\ICA\Game Editor\Game Editor\obj\Debug\App.g.cs
+U:\2nd Year\MIG\ICA\Game Editor\Game Editor\obj\Debug\Game Editor_MarkupCompile.cache
+U:\2nd Year\MIG\ICA\Game Editor\Game Editor\obj\Debug\Game Editor.g.resources
+U:\2nd Year\MIG\ICA\Game Editor\Game Editor\obj\Debug\Game_Editor.Properties.Resources.resources
+U:\2nd Year\MIG\ICA\Game Editor\Game Editor\obj\Debug\Game Editor.csproj.GenerateResource.Cache
+U:\2nd Year\MIG\ICA\Game Editor\Game Editor\obj\Debug\Game Editor.exe
+U:\2nd Year\MIG\ICA\Game Editor\Game Editor\obj\Debug\Game Editor.pdb
+U:\2nd Year\MIG\ICA\Game Editor\Game Editor\obj\Debug\Instructions.baml
+U:\2nd Year\MIG\ICA\Game Editor\Game Editor\obj\Debug\Instructions.g.cs

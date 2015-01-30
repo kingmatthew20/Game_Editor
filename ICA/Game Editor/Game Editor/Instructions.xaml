@@ -1,0 +1,15 @@
+﻿<Window x:Class="Game_Editor.Instructions"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Instructions" Height="300" Width="600">
+    <Grid Margin="0,0,0,0">
+        <TextBlock x:Name="Char" Width="600" Margin="0,0,-8,236" 
+    		FontSize="14"><Run Text="Choose the colour of your character. Set the characters lives, run speed, and jump height."/><LineBreak/><Run/></TextBlock>
+        <TextBlock x:Name="Map" Margin="0,25,0,203" 
+        	FontSize="14" Text="To use the map choose the length of your map and then load the tiles. Choose a tile and click in the grid to place it. Press and hold to paint." TextWrapping="Wrap"/>
+        <TextBlock x:Name="Background" Margin="0,72,0,156" 
+                   FontSize="14" Text="Choose a backgound by cliking load and then save the image by clicking save."/>
+        <TextBlock Name="Enemy" Margin="0,100,0,129" 
+                   FontSize="14" Text="Choose an enemy count and the frequency they will appear per minute"/>
+    </Grid>
+</Window>

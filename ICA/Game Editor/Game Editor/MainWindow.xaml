@@ -1,0 +1,213 @@
+﻿<Window x:Class="Game_Editor.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Game Editor" Height="512" Width="768" Closing="catch_Close">
+    <Grid>
+        <Menu IsMainMenu="True" Background="White" Height="25" VerticalAlignment="Top">
+            <MenuItem Header= "File">
+                <MenuItem Header= "New" Command="ApplicationCommands.New"/>
+                <MenuItem Header="Show Instructions" Click="Instructions"/>
+                <MenuItem Header="Save Character" Click="CharSave"/>
+                <MenuItem Header="Load Character" Click="CharLoad"/>
+                <MenuItem Header="Exit" Click="FileExit"/>
+            </MenuItem>
+            <MenuItem Header="Map">
+                <MenuItem Header="Load Tiles" Command="ApplicationCommands.Replace"/>
+                <MenuItem Header="Load Map" Command="ApplicationCommands.Open"/>
+                <MenuItem Header="Save Map" Command="ApplicationCommands.Save"/>
+            </MenuItem>
+            <MenuItem Header="Enemies">
+                <MenuItem Header="Load Enemies" Click="EnemiesLoad"/>
+                <MenuItem Header="Save Enemies" Click="EnemiesSave"/>
+            </MenuItem>
+        </Menu>
+
+
+
+        <TabControl Name="tabCtrl" Grid.Column="0" Margin="0,30,9.6,1" Grid.ColumnSpan="2">
+
+            <TabItem Header="Character">
+                <Grid Name="gridLevel">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="275"/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="200"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="18"/>
+                        <RowDefinition/>
+                        <RowDefinition Height="189"/>
+                    </Grid.RowDefinitions>
+
+                    <Border BorderBrush ="Black" BorderThickness="1" Grid.Column="1" Margin="2,10,0,10" Grid.Row="1">
+                        <Image Grid.Column="1" Margin="8,8,9,9" Grid.Row="1" Name="knight"/>
+                    </Border>
+
+                    <ListView Grid.Column="2" Margin="10" Grid.Row="1"
+                              ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                              ScrollViewer.VerticalScrollBarVisibility="Visible" Name="Colour">
+                        <ListViewItem Name="Green">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="U:\2nd Year\MIG\ICA\Game Editor\Game Editor\resource\bullet_green.png" Margin="0,0,6,0" Width="16"/>
+                                <TextBlock>Green</TextBlock>
+                            </StackPanel>
+                        </ListViewItem>
+                        <ListViewItem Name="Blue">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="U:\2nd Year\MIG\ICA\Game Editor\Game Editor\resource\bullet_blue.png" Margin="0,0,6,0" Width="16"/>
+                                <TextBlock>Blue</TextBlock>
+                            </StackPanel>
+                        </ListViewItem>
+                        <ListViewItem Name="Red">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="U:\2nd Year\MIG\ICA\Game Editor\Game Editor\resource\bullet_red.png" Margin="0,0,6,0" Width="16"/>
+                                <TextBlock>Red</TextBlock>
+                            </StackPanel>
+                        </ListViewItem>
+                        <ListViewItem Name="Grey">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="U:\2nd Year\MIG\ICA\Game Editor\Game Editor\resource\bullet_grey.png" Margin="0,0,6,0" Width="16"/>
+                                <TextBlock>Grey</TextBlock>
+                            </StackPanel>
+                        </ListViewItem>
+                    </ListView>
+
+                    <Button Content="Load Colour" Grid.Column="2" HorizontalAlignment="Left" Height="19" Margin="10,1,0,0" Grid.Row="2" VerticalAlignment="Top" Width="180" Name="Load_colour" Click="callColour"/>
+                    <Label Content="Character Sprite" Grid.Column="1" HorizontalAlignment="Left" Height="29" Margin="10,-1,0,0" VerticalAlignment="Top" Width="118" Grid.RowSpan="2"/>
+                    <Label Content="Colour" Grid.Column="2" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" Width="111" Height="23" Grid.RowSpan="2"/>
+
+                    <TextBox Height="25" Margin="94,10,0,0" CommandManager.PreviewExecuted="textBox_PreviewExecuted"  TextWrapping="Wrap" VerticalAlignment="Top" Grid.Row="1" Name="TLives" PreviewTextInput="isText" Text="{Binding xxx.yyyy}" HorizontalAlignment="Left" Width="40"/>
+                    <Label Margin="0,10,181,167" Content="Character Lives:" Grid.Column="0" Grid.Row="1" />
+
+                    <ComboBox Margin="94,50,33,0" Grid.Row="1" SelectedIndex="3" Name="Run" Height="31" VerticalAlignment="Top">
+                        <ComboBoxItem Content="0.25X" HorizontalAlignment="Left" Width="146" Margin="2,0,-2,0"/>
+                        <ComboBoxItem Content="0.5X"/>
+                        <ComboBoxItem Content="0.75X" HorizontalAlignment="Left" Width="146"/>
+                        <ComboBoxItem Content="1X"/>
+                        <ComboBoxItem Content="1.25X"/>
+                        <ComboBoxItem Content="1.5X"/>
+                        <ComboBoxItem Content="1.75X"/>
+                        <ComboBoxItem Content="2X"/>
+                    </ComboBox>
+                    <Label Margin="0,50,181,118" Content="Run Speed:" Grid.Column="0" Grid.Row="1" />
+
+                    <ComboBox Margin="94,94,33,0" Grid.Row="1" SelectedIndex="3" Name="Jump" Height="31" VerticalAlignment="Top">
+                        <ComboBoxItem Content="0.25X" HorizontalAlignment="Left" Width="146" Margin="2,0,-2,0"/>
+                        <ComboBoxItem Content="0.5X"/>
+                        <ComboBoxItem Content="0.75X" HorizontalAlignment="Left" Width="146"/>
+                        <ComboBoxItem Content="1X"/>
+                        <ComboBoxItem Content="1.25X"/>
+                        <ComboBoxItem Content="1.5X"/>
+                        <ComboBoxItem Content="1.75X"/>
+                        <ComboBoxItem Content="2X"/>
+                    </ComboBox>
+                    <Label Margin="0,92,181,76" Content="Jump Height:" Grid.Column="0" Grid.Row="1" />
+
+                </Grid>
+            </TabItem>
+            <TabItem Header="Map">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="20"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="200"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="30"/>
+                    </Grid.RowDefinitions>
+
+                    <ListView Grid.Column="2" Margin="0,10,10,10" Grid.Row="1"
+                              ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                              ScrollViewer.VerticalScrollBarVisibility="Visible"
+                              Name="MapTiles" HorizontalAlignment="Right" Width="180">
+                        <ListView.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <WrapPanel Orientation="Horizontal"></WrapPanel>
+                            </ItemsPanelTemplate>
+                        </ListView.ItemsPanel>
+                    </ListView>
+                    <ScrollViewer Grid.Column="1" Margin="10" Grid.Row="1" ScrollViewer.VerticalScrollBarVisibility="Disabled" ScrollViewer.HorizontalScrollBarVisibility="Visible">
+                        <Canvas x:Name="Mapping" Background="#FFFFC5C5" MouseLeftButtonDown="Image_MouseLeftDown" MouseLeftButtonUp="Image_MouseLeftDown" MouseMove="Image_MouseMove" Height="349" Width="500">
+                            <Grid x:Name="gridMapTiles"/>
+                        </Canvas>
+                    </ScrollViewer>
+
+                    <TextBox CommandManager.PreviewExecuted="textBox_PreviewExecuted" PreviewTextInput="isWidth" Name ="txtGridWidth" Text="10" Grid.Column="1" HorizontalAlignment="Left" Height="26" Margin="135,5,0,-1" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="38"/>
+                    <Label Margin="28,6,0,-1" Grid.Row="2" Content="Map Width:" HorizontalAlignment="Left" VerticalAlignment="Top" Height="25" Grid.Column="1"/>
+
+
+
+                </Grid>
+            </TabItem>
+            <TabItem Header="Background">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="20"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="200"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="30"/>
+                    </Grid.RowDefinitions>
+
+                    <Border BorderBrush ="Black" BorderThickness="1" Grid.Column="1" Margin="10,10,10,12" Grid.Row="1">
+                        <Image Grid.Column="1" Margin="8,8,9,9" Grid.Row="1" Name="background"/>
+                    </Border>
+
+                    <Button Grid.Column="2" Grid.Row="1" Margin="0,10,0,0" Name="loadBack" Content="Load Image" Click="loadImage" Height="32" VerticalAlignment="Top"/>
+                    <Button Grid.Column="2" Grid.Row="1" Margin="0,47,0,0" Name="saveBack" Content="Save Image" Click="SaveImage" Height="32" VerticalAlignment="Top"/>
+
+                </Grid>
+            </TabItem>
+            <TabItem Header="Enemies">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="20"/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="369"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="102"/>
+                        <RowDefinition Height="160"/>
+                        <RowDefinition Height="157"/>
+                    </Grid.RowDefinitions>
+
+                    <ComboBox Name ="WeakCount" Grid.Column="1" Margin="151,40,66,32" SelectedIndex="2">
+                        <ComboBoxItem Content="Low"/>
+                        <ComboBoxItem Content="Medium"/>
+                        <ComboBoxItem Content="High"/>
+                    </ComboBox>
+                    <Label Content="Weak Enemy Count:" Grid.Column="1" HorizontalAlignment="Left" Height="28" Margin="8,42,0,0" VerticalAlignment="Top" Width="161"/>
+                    <Slider x:Name="WeakFeq" Grid.Column="2" HorizontalAlignment="Left" Height="29" Margin="149,41,0,0" VerticalAlignment="Top" Width="210" Maximum="100" Minimum="1" LargeChange="10" SmallChange="1" TickPlacement="BottomRight" AutoToolTipPlacement="BottomRight" Value="10" IsSnapToTickEnabled="True"/>
+                    <Label Content="Low Enemy Frequency" Grid.Column="2" HorizontalAlignment="Left" Margin="10,40,0,32" Width="134"/>
+                    <TextBox Name="Low" Text="{Binding ElementName=WeakFeq,Path=Value}" Grid.Column="2" Margin="322,75,10,1" Grid.RowSpan="1" Grid.Row="0"/>
+
+                    <ComboBox Name="MedCount" Grid.Column="1" Margin="151,36,66,95" SelectedIndex="2" Grid.Row="1">
+                        <ComboBoxItem Content="Low"/>
+                        <ComboBoxItem Content="Medium"/>
+                        <ComboBoxItem Content="High"/>
+                    </ComboBox>
+                    <Label Content="Medium Enemy Count:" Grid.Column="1" HorizontalAlignment="Left" Height="28" Margin="8,42,0,0" VerticalAlignment="Top" Width="161" Grid.Row="1"/>
+                    <Slider x:Name="MedFeq" Grid.Column="2" HorizontalAlignment="Left" Height="29" Margin="149,41,0,0" VerticalAlignment="Top" Width="210" Maximum="100" Minimum="1" LargeChange="10" SmallChange="1" TickPlacement="BottomRight" AutoToolTipPlacement="BottomRight" Value="10" Grid.Row="1" IsSnapToTickEnabled="True"/>
+                    <Label Content="Medium Enemy Frequency" Grid.Column="2" HorizontalAlignment="Left" Margin="0,41,0,31" Width="159" Grid.Row="1"/>
+                    <TextBox Name="Med" Text="{Binding ElementName=MedFeq,Path=Value}" Grid.Column="2" Margin="322,75,10,59" Grid.RowSpan="1" Grid.Row="1"/>
+
+                    <ComboBox Name="ToughCount" Grid.Column="1" Margin="151,10,66,115" SelectedIndex="2" Grid.Row="2">
+                        <ComboBoxItem Content="Low"/>
+                        <ComboBoxItem Content="Medium"/>
+                        <ComboBoxItem Content="High"/>
+                    </ComboBox>
+                    <Label Content="Tough Enemy Count:" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" Height="28" Margin="8,10,0,0" VerticalAlignment="Top" Width="161"/>
+                    <Slider x:Name="HighFeq" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Left" Height="29" Margin="144,10,0,0" VerticalAlignment="Top" Width="210" Maximum="100" Minimum="1" LargeChange="10" SmallChange="1" TickPlacement="BottomRight" AutoToolTipPlacement="BottomRight" Value="10" IsSnapToTickEnabled="True"/>
+                    <Label Content="Tough Enemy Frequency" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Left" Margin="0,10,0,62" Width="144"/>
+                    <TextBox Name="High" Text="{Binding ElementName=HighFeq,Path=Value}" Grid.Column="2" Margin="317,44,15,87" Grid.RowSpan="1" Grid.Row="2"/>
+
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
